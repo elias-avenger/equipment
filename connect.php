@@ -1,5 +1,5 @@
 <?php
   $conn = mysqli_connect('localhost', 'root', '');
-  mysqli_select_db('inventory');
+  mysqli_select_db($conn, 'inventory');
 
 ?>
