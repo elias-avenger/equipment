@@ -30,7 +30,7 @@
     <form class="" action="insert_signup.php" method="post">
       <br><br>
       Full Name:
-      <input type="text" name="name">
+      <input type="text"4 name="name">
       <br><br>
       Phone Number:
       <input type="Phone" name="phone">
@@ -38,12 +38,20 @@
       Email:
       <input type="email" name="email">
       <br><br>
+      <?php
+        if(isset($_SESSION['email']))
+          print "<!--";
+      ?>
       Password:
       <input type="password" name="pass">
       <br><br>
       Confirm Password:
       <input type="password" name="">
       <br><br>
+      <?php
+        if(isset($_SESSION['email']))
+          print "-->";
+      ?>
       <input type="submit" value="SignUp">
     </form>
   </body>
