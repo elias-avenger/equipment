@@ -5,19 +5,9 @@
   $num = mysqli_num_rows($query);
   if($num == 1)
   {
-    if(isset($_SESSION['email']))
-    {
-      $e = $_SESSION['email'];
-      $qry = mysqli_query($conn, "SELECT type FROM user WHERE email = '$e'");
-      $arr = mysqli_fetch_array($qry);
-      $t = $arr['type'];
-      if($t == 'N')
+    
       header("location: index.php");
-    }
-    else
-    {
-      header("location: index.php");
-    }
+     
   }
 ?>
 <!DOCTYPE html>
@@ -38,21 +28,16 @@
       Email:
       <input type="email" name="email">
       <br><br>
-      <?php
-        if(isset($_SESSION['email']))
-          print "<!--";
-      ?>
+      
       Password:
       <input type="password" name="pass">
       <br><br>
       Confirm Password:
       <input type="password" name="">
       <br><br>
-      <?php
-        if(isset($_SESSION['email']))
-          print "-->";
-      ?>
+       
       <input type="submit" value="SignUp">
     </form>
   </body>
 </html>
+ 
