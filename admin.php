@@ -46,7 +46,7 @@
             $n = $array['name'];
             $d = $array['description'];
             ?>
-            <button class="btn btn-secondary" id="<?php print $n;?>" onclick="getForm(this.id)">add <?php print $n;?></button>
+            <button class="btn btn-secondary" id="<?php print $n;?>" onclick="getForm(this.id)">Add <?php print $n;?></button>
             <?php
           }
         ?>
@@ -84,12 +84,12 @@
           </div>
           <div class="card bg-white">
             <div class="card-body center p2-rounded shadow" >
-              <h4 class="alert bg-primary text-white text-center">Add category</h4>
+              <h4 class="alert bg-primary text-white text-center">Add item category</h4>
               <form  class="form-group " action="add_category.php" method="post" style="margin:1">
                 <br>
                 <input type ="text"name="name" class="form-control" placeholder="Category name"><br>
                 <textarea name="descn" id="" cols="30" rows="3.8" class="form-control" placeholder="Description----"></textarea><br>
-                <button class="btn btn-primary" type="submit">Add</button>
+                <button class="btn btn-primary" type="submit">AddCategory</button>
               </form>
             </div>
           </div>
