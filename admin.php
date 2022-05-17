@@ -30,20 +30,34 @@
   </head>
   <body>
      
-    
+    <br>
     <div class ="col-md-12">
     <div class=" " style="float:right">
-      <a  href="logout.php" style="color:white;"><button class ="btn btn-danger" >Logout</button></a>
+      <a  href="logout.php" style="color:white;"><button class="btn btn-danger" >Logout</button></a>
 
 
 
     </div><br><br>
-    <div class ="columns">
-<div class="col-md-4">
+     
 
-<h4 class="alert bg-info text-white text-center">Add new User</h4> 
-  <div class="card" >
+
+  
+    
+    
+    </div>
+
+    
+</div>
+<p>&nbsp;</p>
+
+</div>
+<div class="container">
+   
+  <div class="card-deck">
+    <div class="card bg-white">
+    <div class=" " >
   <div class="card-body center p2-rounded shadow" >
+  <h4 class="alert bg-primary text-white text-center">Add new User</h4> 
 
     <form  class="form-group " action="insert_signup.php" method="post" style="margin:1">
       <br>
@@ -61,10 +75,38 @@
     </form>
    
     </div></div>
+      
     </div>
+    <div class="card bg-white">
+    <div class="card-body center p2-rounded shadow" >
+  <h4 class="alert bg-primary text-white text-center">Add category</h4> 
 
-    
+    <form  class="form-group " action="insert_signup.php" method="post" style="margin:1">
+      <br>
+       <input type ="text" class="form-control" placeholder="category name"><br>
+       <textarea name="" id="" cols="30" rows="3.8" class="form-control" placeholder="description----"></textarea><br>
+       
+      
+      <button class="btn btn-primary" type="submit">signup</button>
+    </form>
+   
+    </div>
+      
+    </div>
+    <div class="card bg-white">
+      <div class="card-body text-center">
+         
+      </div>
+    </div>
+     
 </div>
-</div>
+
+<P>&nbsp;</P> 
+    </div class ="col-md-12" style="margin-left:6px">  
+    <button class="btn btn-primary">add item</button>
+  </div>
+ 
+
+
   </body>
 </html>
