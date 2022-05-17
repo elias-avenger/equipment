@@ -34,14 +34,42 @@
       <div class=" " style="float:right">
         <a  href="logout.php" style="color:white;"><button class="btn btn-warning" >Logout</button></a>
       </div>
-      <br><br>
+      <br>
       <p>&nbsp;</p>
       <div class="container">
+        <?php
+          $query = mysqli_query($conn, "SELECT * FROM category")
+          or die("Failed to Select Cat ".mysqli_error($conn));
+          while ($array = mysqli_fetch_array($query))
+          {
+            $i = $array['id'];
+            $n = $array['name'];
+            $d = $array['description'];
+            ?>
+            <button class="btn btn-secondary" id="<?php print $n;?>" onclick="getForm(this.id)">add <?php print $n;?></button>
+            <?php
+          }
+        ?>
+        <br> <hr>
         <div class="card-deck">
+          <div class="card bg-white" id="item-form" hidden>
+            <div class="card-body center p2-rounded shadow" >
+              <h4 class="alert bg-secondary text-white text-center">Add Item</h4>
+              <form  class="form-group " action="add_item.php" method="post" style="margin:1">
+                <br>
+                <input type ="text" name="item" class="form-control" placeholder="Item name">
+                <br>
+                <textarea name="descn" id="" cols="30" rows="2.8" class="form-control" placeholder="Description----"></textarea>
+                <br>
+                Category: <input type ="text" id="category" name="cat" class="form-control" disabled>
+                <br>
+                <button class="btn btn-secondary" type="submit">Save</button>
+              </form>
+            </div>
+          </div>
           <div class="card bg-white">
-            <div class=" " >
               <div class="card-body center p2-rounded shadow" >
-                <h4 class="alert bg-primary text-white text-center">Add new User</h4>
+                <h4 class="alert bg-info text-white text-center">Add new User</h4>
                 <form  class="form-group " action="insert_signup.php" method="post" style="margin:1">
                   <br>
                   <input class="form-control" type="text" name="name" placeholder="Name">
@@ -50,31 +78,37 @@
                   <br>
                   <input class="form-control" type="email" name="email" placeholder="Email">
                   <br>
-                  <button class="btn btn-primary" type="submit">signup</button>
+                  <button class="btn btn-info" type="submit">AddUser</button>
                 </form>
               </div>
-            </div>
           </div>
           <div class="card bg-white">
             <div class="card-body center p2-rounded shadow" >
               <h4 class="alert bg-primary text-white text-center">Add category</h4>
-              <form  class="form-group " action="insert_signup.php" method="post" style="margin:1">
+              <form  class="form-group " action="add_category.php" method="post" style="margin:1">
                 <br>
-                <input type ="text" class="form-control" placeholder="category name"><br>
-                <textarea name="" id="" cols="30" rows="3.8" class="form-control" placeholder="description----"></textarea><br>
-                <button class="btn btn-primary" type="submit">signup</button>
+                <input type ="text"name="name" class="form-control" placeholder="Category name"><br>
+                <textarea name="descn" id="" cols="30" rows="3.8" class="form-control" placeholder="Description----"></textarea><br>
+                <button class="btn btn-primary" type="submit">Add</button>
               </form>
             </div>
           </div>
-          <div class="card bg-white">
+          <!-- <div class="card bg-white">
             <div class="card-body text-center">
 
             </div>
-          </div>
+          </div> -->
         </div>
         <P>&nbsp;</P>
-        <button class="btn btn-primary">add item</button>
       </div>
     </div>
+    <script type="text/javascript">
+      function getForm(clicked_btn)
+      {
+        let btn = document.getElementById(clicked_btn);
+        document.getElementById('item-form').hidden = false;
+        document.getElementById('category').value = clicked_btn;
+      }
+    </script>
   </body>
 </html>
