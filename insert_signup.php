@@ -27,7 +27,6 @@
   $message2 ="";
   $location = "index.php";
   if(isset($_SESSION['email'])){
-<<<<<<< HEAD
     $q = mysqli_query($conn, "SELECT id FROM user WHERE email='$e'");
     $r = mysqli_fetch_array($q);
     $id = $r['id'];
@@ -36,14 +35,6 @@
     //print " </b><br>...<br>The user's password is: <b>".$n_pwd;
     $message2 = "The user's password is: ".$n_pwd;
     $location = "admin.php";
-=======
-      $q = mysqli_query($conn, "SELECT id FROM user WHERE email='$e'");
-      $r = mysqli_fetch_array($q);
-      $id = $r['id'];
-      $n_pwd = $n[0].$n[1].$n[2].$id;
-      mysqli_query($conn, "UPDATE user SET password = '$n_pwd' WHERE id = '$id'") or die("Failed to update pass: ".mysqli_error($conn));
-      print " </b><br>...<br>The user's password is: <b>".$n_pwd;
->>>>>>> 79c6db3f585dd29c0c9d423a36e44ffd575a2828
   }
 ?>
 <script>
