@@ -29,29 +29,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
+    <br>
     <div class ="col-md-12">
       <div class=" " style="float:right">
-        <a  href="logout.php" style="color:white;"><button class ="btn btn-warning" >Logout</button></a>
+        <a  href="logout.php" style="color:white;"><button class="btn btn-warning" >Logout</button></a>
       </div>
       <br><br>
-      <div class ="columns">
-        <div class="col-md-4">
-          <h4 class="alert bg-primary text-white text-center">Add new User</h4>
-          <div class="card" >
+      <p>&nbsp;</p>
+      <div class="container">
+        <div class="card-deck">
+          <div class="card bg-white">
+            <div class=" " >
+              <div class="card-body center p2-rounded shadow" >
+                <h4 class="alert bg-primary text-white text-center">Add new User</h4>
+                <form  class="form-group " action="insert_signup.php" method="post" style="margin:1">
+                  <br>
+                  <input class="form-control" type="text" name="name" placeholder="Name">
+                  <br>
+                  <input class="form-control" type="Phone" name="phone" placeholder="Phone number">
+                  <br>
+                  <input class="form-control" type="email" name="email" placeholder="Email">
+                  <br>
+                  <button class="btn btn-primary" type="submit">signup</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-white">
             <div class="card-body center p2-rounded shadow" >
+              <h4 class="alert bg-primary text-white text-center">Add category</h4>
               <form  class="form-group " action="insert_signup.php" method="post" style="margin:1">
                 <br>
-                <input class="form-control" type="text" name="name" placeholder="Name">
-                <br>
-                <input class="form-control" type="Phone" name="phone" placeholder="Phone number">
-                <br>
-                <input class="form-control" type="email" name="email" placeholder="Email">
-                <br>
+                <input type ="text" class="form-control" placeholder="category name"><br>
+                <textarea name="" id="" cols="30" rows="3.8" class="form-control" placeholder="description----"></textarea><br>
                 <button class="btn btn-primary" type="submit">signup</button>
               </form>
             </div>
           </div>
+          <div class="card bg-white">
+            <div class="card-body text-center">
+
+            </div>
+          </div>
         </div>
+        <P>&nbsp;</P>
+        <button class="btn btn-primary">add item</button>
       </div>
     </div>
   </body>
