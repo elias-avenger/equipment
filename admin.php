@@ -19,6 +19,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/oysters_pearls.png">
     <title>O&P-UG</title>
 
     <link rel="stylesheet" href="style.css">
